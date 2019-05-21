@@ -1,0 +1,17 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (200px)[6];
+      grid-template-columns: repeat(6, 200px);
+  grid-gap: 20px;
+}
+/*# sourceMappingURL=style.css.map */
