@@ -1,3 +1,11 @@
+$colors:
+rgb(194, 194, 194),
+rgb(150, 150, 150),
+rgb(218, 218, 218),
+rgb(182, 182, 182),
+rgb(215, 215, 215),
+rgb(176, 176, 176);
+
 body,
 html {
   height: 100%;
@@ -13,6 +21,26 @@ h1 {
 
 main {
   display: grid;
-  grid-template-columns: repeat(6,200px);
-  grid-gap:20px;
+  // grid-template-columns: repeat(6,200px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  // grid-gap:1rem;
+  .card {
+
+
+    @for $i from 1 to 6 {
+      &:nth-of-type(#{$i}){
+        background: nth($colors, $i);
+      }
+    }
+    transition: transform 0.2s;
+    &:hover {
+      transform: translateY(-10px);
+    }
+    img {
+      width: 100%;
+    }
+    .info {
+      padding: 1rem;
+    }
+  }
 }

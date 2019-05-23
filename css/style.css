@@ -10,8 +10,47 @@ body {
 main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (200px)[6];
-      grid-template-columns: repeat(6, 200px);
-  grid-gap: 20px;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+main .card {
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+main .card:nth-of-type(1) {
+  background: #c2c2c2;
+}
+
+main .card:nth-of-type(2) {
+  background: #969696;
+}
+
+main .card:nth-of-type(3) {
+  background: #dadada;
+}
+
+main .card:nth-of-type(4) {
+  background: #b6b6b6;
+}
+
+main .card:nth-of-type(5) {
+  background: #d7d7d7;
+}
+
+main .card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+main .card img {
+  width: 100%;
+}
+
+main .card .info {
+  padding: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
